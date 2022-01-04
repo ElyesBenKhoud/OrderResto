@@ -4,11 +4,7 @@ import { useState } from "react";
 
 const Featured = () => {
   const [index, setIndex] = useState(0);
-  const images = [
-    "/img/featured.png",
-    "/img/featured2.png",
-    "/img/featured3.png",
-  ];
+  const images = ["/img/pizza.png", "/img/bike.png", "/img/size.png"];
 
   const handleArrow = (direction) => {
     if (direction === "l") {
@@ -30,6 +26,7 @@ const Featured = () => {
       </div>
       <div
         className={styles.wrapper}
+        //animate the slide bar
         style={{ transform: `translateX(${-100 * index}vw)` }}
       >
         {images.map((img, i) => (

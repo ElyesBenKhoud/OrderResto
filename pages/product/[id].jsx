@@ -6,6 +6,7 @@ const Product = ({ pizza }) => {
   const [size, setSize] = useState(0);
   const [price, setPrice] = useState(pizza.prices[0]);
   const [extras, setextras] = useState([]);
+  const [quantity, setquantity] = useState(1);
 
   //handle difference between product sizes
   const changePrice = (number) => {
@@ -28,7 +29,6 @@ const Product = ({ pizza }) => {
       setextras(extras.filter((extra) => extra._id !== option._id));
     }
   };
-  console.log(extras);
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -71,7 +71,12 @@ const Product = ({ pizza }) => {
           ))}
         </div>
         <div className={styles.add}>
-          <input type="number" defaultValue={1} className={styles.quantity} />
+          <input
+            onChange={(e) => setquantity(e.target.value)}
+            type="number"
+            defaultValue={1}
+            className={styles.quantity}
+          />
           <button className={styles.button}>Add to Cart</button>
         </div>
       </div>

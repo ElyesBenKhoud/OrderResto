@@ -21,6 +21,7 @@ export default function Home({ pizzaList }) {
 }
 
 export const getServerSideProps = async () => {
+  //500 request error fixed
   const response = await axios.get("http://localhost:3000/api/products");
   return {
     props: {
